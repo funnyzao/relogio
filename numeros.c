@@ -1,97 +1,92 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct{
-	int valor;
-	char grade[5][6];
-}Numero;
-
-const Numero zero={0,{
+const int zero[5][6]={
 		{1,1,1,1,1,1},
 		{1,1,0,0,1,1},
 		{1,1,0,0,1,1},
 		{1,1,0,0,1,1},
 		{1,1,1,1,1,1}
-	}};
+	};
 
-const Numero um={1,{
+const int um[5][6]={
 		{0,0,0,0,1,1},
 		{0,0,0,0,1,1},
 		{0,0,0,0,1,1},
 		{0,0,0,0,1,1},
 		{0,0,0,0,1,1}
-	}};
+	};
 	
-const Numero dois={2,{
+const int dois[5][6]={
 		{1,1,1,1,1,1},
 		{0,0,0,0,1,1},
 		{1,1,1,1,1,1},
 		{1,1,0,0,0,0},
 		{1,1,1,1,1,1}
-	}};
+	};
 	
-const Numero tres={3,{
+const int tres[5][6]={
 		{1,1,1,1,1,1},
 		{0,0,0,0,1,1},
 		{1,1,1,1,1,1},
 		{0,0,0,0,1,1},
 		{1,1,1,1,1,1}
-	}};
+	};
 	
-const Numero quatro={4,{
+const int quatro[5][6]={
 		{1,1,0,0,1,1},
 		{1,1,0,0,1,1},
 		{1,1,1,1,1,1},
 		{0,0,0,0,1,1},
 		{0,0,0,0,1,1}
-	}};
+	};
 	
-const Numero cinco={5,{
+const int cinco[5][6]={
 		{1,1,1,1,1,1},
 		{1,1,0,0,0,0},
 		{1,1,1,1,1,1},
 		{0,0,0,0,1,1},
 		{1,1,1,1,1,1}
-	}};
+	};
 
-const Numero seis={6,{
+const int seis[5][6]={
 		{1,1,1,1,1,1},
 		{1,1,0,0,0,0},
 		{1,1,1,1,1,1},
 		{1,1,0,0,1,1},
 		{1,1,1,1,1,1}
-	}};
+	};
 	
-const Numero sete={7,{
+const int sete[5][6]={
 		{1,1,1,1,1,1},
 		{0,0,0,0,1,1},
 		{0,0,0,0,1,1},
 		{0,0,0,0,1,1},
 		{0,0,0,0,1,1}
-	}};
+	};
 
-const Numero oito={8,{
+const int oito[5][6]={
 		{1,1,1,1,1,1},
 		{1,1,0,0,1,1},
 		{1,1,1,1,1,1},
 		{1,1,0,0,1,1},
 		{1,1,1,1,1,1}
-	}};
+	};
 	
-const Numero nove={9,{
+const int nove[5][6]={
 		{1,1,1,1,1,1},
 		{1,1,0,0,1,1},
 		{1,1,1,1,1,1},
 		{0,0,0,0,1,1},
 		{0,0,0,0,1,1}
-	}};
+	};
 	
-const Numero doisPontos={10,{
+const int doisPontos[5][6]={
 		{0,0,0,0,0,0},
 		{0,0,1,1,0,0},
 		{0,0,0,0,0,0},
 		{0,0,1,1,0,0},
 		{0,0,0,0,0,0}
-}};
+};
 	
-const Numero * const vetor[]={&zero, &um, &dois, &tres, &quatro, &cinco, &seis, &sete, &oito, &nove, &doisPontos};
+const int (*vetor[])[6]={zero, um, dois, tres, quatro, cinco, seis, sete, oito, nove, doisPontos};

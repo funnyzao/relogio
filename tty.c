@@ -9,7 +9,7 @@
 //terceiro digito (20, 1)
 //quarto ditito (28, 1)
 
-void printNumber(const Numero, int*, int*);
+void printNumber(const int (*number)[6], int*, int*);
 
 int main(){
 	time_t now=time(NULL);
@@ -21,41 +21,41 @@ int main(){
 	
 	printf("\033[2J");
 	
-	printNumber(*vetor[numero1], &x, &y);
+	printNumber(vetor[numero1], &x, &y);
 	x+=8;
 	y=1;
-	printNumber(*vetor[numero2], &x, &y);
+	printNumber(vetor[numero2], &x, &y);
 	x+=6;
 	y=1;
 	
-	printNumber(*vetor[10], &x, &y);
+	printNumber(vetor[10], &x, &y);
 	x+=6;
 	y=1;
 	
 	numero1=t->tm_min/10;
 	numero2=t->tm_min%10;
 	
-	printNumber(*vetor[numero1], &x, &y);
+	printNumber(vetor[numero1], &x, &y);
 	x+=8;
 	y=1;
-	printNumber(*vetor[numero2], &x, &y);
+	printNumber(vetor[numero2], &x, &y);
 	
 	puts("");
 
 	return 0;
 }
 
-void printNumber(const Numero number, int *x, int *y){
+void printNumber(const int (*number)[6], int *x, int *y){
 	int i, j;
-	char string[5];
+	char string[7];
 	
 	for(i=0;i<5;i++){
 		for(j=0;j<6;j++){
-			if(number.grade[i][j]==0){
+			if(number[i][j]==0){
 				string[j]=' ';
 			}
 			else{
-				string[j]=number.grade[i][j]+218;
+				string[j]=number[i][j]+218;
 			}
 		}
 		string[j]='\0';
