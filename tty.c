@@ -16,32 +16,55 @@ int main(){
 	struct tm *t = localtime(&now);
 	int i, j, y=1, x=0, numero1, numero2;
 	
-	numero1=t->tm_hour/10;
-	numero2=t->tm_hour%10;
 	
-	printf("\033[2J");
-	
-	printNumber(vetor[numero1], &x, &y);
-	x+=8;
-	y=1;
-	printNumber(vetor[numero2], &x, &y);
-	x+=6;
-	y=1;
-	
-	printNumber(vetor[10], &x, &y);
-	x+=6;
-	y=1;
-	
-	numero1=t->tm_min/10;
-	numero2=t->tm_min%10;
-	
-	printNumber(vetor[numero1], &x, &y);
-	x+=8;
-	y=1;
-	printNumber(vetor[numero2], &x, &y);
-	
-	puts("");
-
+	while(1){
+		now=time(NULL);
+		struct tm *t = localtime(&now);
+		
+		numero1=t->tm_hour/10;
+		numero2=t->tm_hour%10;
+		
+		system("cls");
+		//printf("\033[2J");
+		
+		printNumber(vetor[numero1], &x, &y);
+		x+=8;
+		y=1;
+		printNumber(vetor[numero2], &x, &y);
+		x+=6;
+		y=1;
+		
+		printNumber(vetor[10], &x, &y);
+		x+=6;
+		y=1;
+		
+		numero1=t->tm_min/10;
+		numero2=t->tm_min%10;
+		
+		printNumber(vetor[numero1], &x, &y);
+		x+=8;
+		y=1;
+		printNumber(vetor[numero2], &x, &y);
+		x+=6;
+		y=1;
+		
+		printNumber(vetor[10], &x, &y);
+		x+=6;
+		y=1;
+		
+		numero1=t->tm_sec/10;
+		numero2=t->tm_sec%10;
+		
+		printNumber(vetor[numero1], &x, &y);
+		x+=8;
+		y=1;
+		printNumber(vetor[numero2], &x, &y);
+		
+		puts("");
+		y=1;
+		x=0;
+		Sleep(1000);
+	}
 	return 0;
 }
 
