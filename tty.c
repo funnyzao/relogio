@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 #include "numeros.c"
+#define YAXIS 12
+#define XAXIS 29
 
 //primeiro digito (0,1)
 //segundo digito (8, 1)
@@ -14,9 +16,9 @@ void printNumber(const int (*number)[6], int*, int*);
 int main(){
 	time_t now=time(NULL);
 	struct tm *t = localtime(&now);
-	int i, j, y=1, x=0, numero1, numero2;
+	int i, j, y=YAXIS, x=XAXIS, numero1, numero2;
 	
-	
+	printf("\033[?25l");
 	while(1){
 		now=time(NULL);
 		struct tm *t = localtime(&now);
@@ -29,40 +31,40 @@ int main(){
 		
 		printNumber(vetor[numero1], &x, &y);
 		x+=8;
-		y=1;
+		y=YAXIS;
 		printNumber(vetor[numero2], &x, &y);
 		x+=6;
-		y=1;
+		y=YAXIS;
 		
 		printNumber(vetor[10], &x, &y);
 		x+=6;
-		y=1;
+		y=YAXIS;
 		
 		numero1=t->tm_min/10;
 		numero2=t->tm_min%10;
 		
 		printNumber(vetor[numero1], &x, &y);
 		x+=8;
-		y=1;
+		y=YAXIS;
 		printNumber(vetor[numero2], &x, &y);
 		x+=6;
-		y=1;
+		y=YAXIS;
 		
 		printNumber(vetor[10], &x, &y);
 		x+=6;
-		y=1;
+		y=YAXIS;
 		
 		numero1=t->tm_sec/10;
 		numero2=t->tm_sec%10;
 		
 		printNumber(vetor[numero1], &x, &y);
 		x+=8;
-		y=1;
+		y=YAXIS;
 		printNumber(vetor[numero2], &x, &y);
 		
 		puts("");
-		y=1;
-		x=0;
+		y=YAXIS;
+		x=XAXIS;
 		Sleep(1000);
 	}
 	return 0;
